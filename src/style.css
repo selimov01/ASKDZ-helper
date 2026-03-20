@@ -1,4 +1,3 @@
-/* --- ПЕРЕМЕННЫЕ И ОСНОВЫ --- */
 :root {
     --bg-dark: #0d0f11;
     --card-bg: #161a1d;
@@ -39,7 +38,7 @@ body {
 }
 
 main {
-    padding-top: 100px; /* Отступ под шапку */
+    padding-top: 100px;
 }
 
 section {
@@ -47,33 +46,37 @@ section {
     scroll-margin-top: 100px;
 }
 
-/* Все изображения по умолчанию адаптивны */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* --- ТИПОГРАФИКА (УМЕНЬШЕНО) --- */
+/* ТИПОГРАФИКА */
 h1, h2, h3, .logo, .stat-num {
     font-family: var(--font-accent), sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    word-break: break-word; /* Защита от вылетов текста */
+    word-break: break-word;
 }
 
-h1 { font-size: 2.8rem; margin: 0; }
-h2 { font-size: 1.8rem; margin-bottom: 40px; text-align: center; }
-h3 { font-size: 1.2rem; margin-bottom: 10px; }
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-/* СТИЛИЗАЦИЯ ЗАГОЛОВКА "О ПРОЕКТЕ" */
 .section-title {
     text-align: center;
     margin-bottom: 40px;
 }
 
 .section-title h1 {
-    font-size: 3.2rem; /* Оптимальный размер для десктопа */
+    font-size: 3.2rem;
     font-weight: 900;
     background: linear-gradient(0deg, #a1a8b5 0%, #ffffff 50%, #f2f5f9 100%);
     -webkit-background-clip: text;
@@ -95,17 +98,34 @@ h3 { font-size: 1.2rem; margin-bottom: 10px; }
     font-weight: 700;
     border-left: 4px solid var(--accent);
     padding-left: 20px;
-    margin: 20px 0;
+    margin: 25px 0;
+    text-align: left;
 }
 
 p {
     color: var(--text-low);
     margin-bottom: 15px;
+    text-align: left;
 }
 
 strong { color: var(--accent); }
 
-/* --- ШАПКА --- */
+/* ЭФФЕКТЫ ЦИФР */
+.stat-num {
+    font-size: 2.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-desc {
+    font-size: 0.8rem;
+    color: var(--text-low);
+    text-transform: uppercase;
+}
+
+/* ШАПКА */
 header {
     position: fixed;
     top: 0; width: 100%;
@@ -143,6 +163,7 @@ header {
     font-family: var(--font-accent), serif;
     opacity: 0.7;
     transition: var(--transition);
+    position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -150,7 +171,22 @@ header {
     opacity: 1;
 }
 
-/* --- СЕТКИ КОНТЕНТА --- */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: 0.3s;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* СЕТКИ КОНТЕНТА */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -166,10 +202,6 @@ header {
     border-top: 1px solid var(--border);
 }
 
-.stat-num { font-size: 2.2rem; color: var(--accent); display: block; }
-.stat-desc { font-size: 0.8rem; color: var(--text-low); }
-
-/* Мониторинг: 6 карточек */
 .problem-reports {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -184,10 +216,35 @@ header {
     transition: var(--transition);
 }
 
-.report:hover { border-color: var(--accent); transform: translateY(-5px); }
-.report-content { padding: 20px; }
+.report:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+.report-content {
+    padding: 20px;
+}
+.report h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
 
-/* Команда */
+.status-badge {
+    background: var(--accent);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.status-stop {
+    background: var(--danger);
+    color: #fff;
+}
+
+/* КОМАНДА */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -210,7 +267,13 @@ header {
     overflow: hidden;
 }
 
-/* --- ФУТЕР --- */
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ПОДВАЛ */
 footer {
     padding: 60px 0;
     background: #090b0d;
@@ -224,40 +287,85 @@ footer {
 }
 
 .footer-title h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: left;
     margin: 0;
-    letter-spacing: -1px;
     text-transform: none;
     font-family: var(--font-main), serif;
 }
 
-.footer-info { text-align: right; }
-.contact-details p { margin: 5px 0; color: #fff; }
-.contact-details a { color: #fff; text-decoration: none; }
-.social-icons { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
+.footer-info {
+    text-align: right;
+}
 
-.social-link {
-    width: 44px; height: 44px;
-    background: #161a1d;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 5px;
+.contact-details p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    color: #fff;
+    text-align: right;
+}
+
+.contact-details a {
+    color: #fff;
+    text-decoration: none;
     transition: var(--transition);
 }
 
-.social-link:hover { background: var(--accent); }
+.contact-details a:hover {
+    color: var(--accent);
+}
 
-/* --- АДАПТИВНОСТЬ (КЛЮЧЕВЫЕ ИСПРАВЛЕНИЯ) --- */
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
 
-@media (max-width: 1024px) {
-    .problem-reports { grid-template-columns: repeat(2, 1fr); }
-    .footer-title h2 { font-size: 2rem; }
+.social-link {
+    width: 38px;
+    height: 38px;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.social-link img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--accent);
+}
+
+.social-link:hover img {
+    filter: brightness(0);
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 992px) {
+    .problem-reports {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-grid {
+        grid-template-columns: 1fr; gap: 30px;
+    }
+    .about-image {
+        order: -1;
+    }
 }
 
 @media (max-width: 768px) {
-    main { padding-top: 140px; }
+    main {
+        padding-top: 150px;
+    }
 
-    /* Исправляем шапку */
     .header-flex {
         flex-direction: column;
         height: auto;
@@ -266,30 +374,46 @@ footer {
     }
 
     .nav-list {
-        gap: 15px;
-        flex-wrap: wrap; /* Чтобы ссылки не вылетали */
+        gap: 10px 20px;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
-    /* Исправляем "О проекте" */
-    .section-title h1 { font-size: 2.2rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 20px; }
-    .about-image { order: -1; } /* Картинка сверху текста */
+    .section-title h1 {
+        font-size: 2rem;
+    }
 
-    .about-stats { justify-content: center; }
+    .problem-reports, .team-grid {
+        grid-template-columns: 1fr;
+    }
 
-    /* Карточки в одну колонку */
-    .problem-reports, .team-grid { grid-template-columns: 1fr; }
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
 
-    /* Футер */
-    .footer-grid { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-    .footer-title h2 { text-align: center; font-size: 1.8rem; }
-    .footer-info { text-align: center; }
-    .social-icons { justify-content: center; }
+    .footer-title h2 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .footer-info {
+        text-align: center;
+    }
+    .contact-details p {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
-    .section-title h1 { font-size: 1.8rem; }
-    .logo { font-size: 1.1rem; }
-    .nav-link { font-size: 0.8rem; }
+    .section-title h1 {
+        font-size: 1.7rem;
+    }
+    .logo {
+        font-size: 1.1rem;
+    }
 }
