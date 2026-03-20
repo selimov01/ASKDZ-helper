@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дорожные знаки | Система мониторинга</title>
+    <title>Система мониторинга дорожных знаков</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
 
 <header>
     <div class="container header-flex">
-        <div class="logo">ROAD-Z</div>
+        <div class="logo">ATSMS</div>
         <nav aria-label="Главное меню">
-            <ul>
-                <li><a href="#about" class="nav-link">О проекте</a></li>
+            <ul class="nav-list">
+                <li><a href="#about" class="nav-link active">О проекте</a></li>
                 <li><a href="#monitoring" class="nav-link">Мониторинг</a></li>
                 <li><a href="#authors" class="nav-link">Команда</a></li>
             </ul>
@@ -23,74 +24,176 @@
 
 <main>
     <section id="about" class="container">
+        <div class="section-title">
+            <h1>О проекте</h1>
+            <p class="subtitle">Интеллектуальная экосистема безопасности дорожного движения</p>
+        </div>
+
         <div class="about-grid">
             <div class="about-text">
-                <h1>Про сайт и наш проект </h1>
-                <p>У нас есть очень крутое устройство для анализа городской среды и дорожных знаков[cite: 3, 8].</p>
-                <p>Этот ресурс служит панелью управления и мониторинга для нашего технического решения[cite: 3]. Ниже представлено описание ключевых функций и целей разработки в формате демонстрационного текста.</p>
-                <p>Лорем ипсум долор сит амет, консектетур адипишинг элит. Сэд до эиусмод темпор инцидидунт ут лаборе эт долоре магна аликуа. Ут эним ад миним вениам, квис ноструд ксерцитатион улламцо лаборарис ниси ут аликуип экс эа цоммодо цонсекуат.</p>
+                <p class="highlight">Дорожные знаки — это «язык» дороги. Ошибки в их содержании стоят человеческих жизней.</p>
+
+                <p>Проект <strong>ATSMS</strong> направлен на решение критической проблемы: несвоевременного обнаружения повреждений и нарушений регламентов установки технических средств организации движения. В условиях мегаполиса ручной мониторинг тысяч объектов неэффективен и подвержен человеческому фактору.</p>
+
+                <p>Наше решение — это симбиоз высокоточных аппаратных датчиков и алгоритмов компьютерного зрения. Система в реальном времени анализирует состояние знаков на соответствие <strong>ГОСТ Р 52289-2019</strong>, мгновенно выявляя акты вандализма, износ световозвращающего покрытия или отклонения в геометрии установки.</p>
+
+                <p>Мы не просто фиксируем проблемы — мы создаем предиктивную модель обслуживания дорожной сети, снижая риски ДТП и оптимизируя работу городских служб.</p>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-desc">Точность анализа</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">AI</span>
+                        <span class="stat-desc">Computer Vision</span>
+                    </div>
+                </div>
             </div>
             <div class="about-image">
-                <img src="https://via.placeholder.com/600x400/161a1d/ffcc00?text=Device+Photo" alt="Визуализация устройства">
+                <img src="https://via.placeholder.com/800x500/161a1d/ffcc00?text=ATSMS+Technology+Vision" alt="Технологическое зрение системы">
             </div>
         </div>
     </section>
 
     <section id="monitoring" class="container">
-        <h2>Текущий мониторинг</h2>
+        <h2>Текущее состояние дорожных знаков</h2>
         <div class="problem-reports">
             <article class="report">
-                <div class="report-header">
-                    <span class="status-badge">CRO</span>
-                    <h3>Проблема: Граффити [cite: 10]</h3>
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+1" alt="Фото объекта">
                 </div>
-                <p><strong>Адрес:</strong> улица Пушкина, дом Колотушкина [cite: 10]</p>
-                <p>Система зафиксировала несанкционированные изображения на дорожном объекте.</p>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge">CRO</span>
+                        <h3>Объект: Граффити</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> ул. Пушкина, дом Колотушкина</p>
+                    <p>Зафиксировано значительное скопление несанкционированных надписей на поверхности знака.</p>
+                </div>
             </article>
 
             <article class="report">
-                <div class="report-header">
-                    <span class="status-badge status-stop">STOP [cite: 5]</span>
-                    <h3>Проблема: Цикады [cite: 11]</h3>
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+2" alt="Фото объекта">
                 </div>
-                <p><strong>Адрес:</strong> Солт-Лейк-Сити, штат Юта [cite: 11]</p>
-                <p>Критический уровень биологического шума, влияющий на работу датчиков.</p>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge status-stop">STOP</span>
+                        <h3>Объект: Цикады</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> Солт-Лейк-Сити, штат Юта</p>
+                    <p>Критический уровень шума. Требуется калибровка акустических датчиков устройства.</p>
+                </div>
+            </article>
+
+            <article class="report">
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+3" alt="Деградация покрытия">
+                </div>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge">WARN</span>
+                        <h3>Объект: Износ</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> Ленинский проспект, 14</p>
+                    <p>Коэффициент световозвращения ниже нормы ГОСТ на 30%. Рекомендуется замена полотна.</p>
+                </div>
+            </article>
+
+            <article class="report">
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+4" alt="Наклон знака">
+                </div>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge status-stop">ERR</span>
+                        <h3>Объект: Геометрия</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> ул. Лобачевского, 42</p>
+                    <p>Обнаружен критический наклон стойки (более 15°). Риск падения конструкции.</p>
+                </div>
+            </article>
+
+            <article class="report">
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+5" alt="Перекрытие ветками">
+                </div>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge">VIEW</span>
+                        <h3>Объект: Видимость</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> Боровское шоссе, вл. 2</p>
+                    <p>Знак перекрыт растительностью более чем на 40%. Требуется опиловка деревьев.</p>
+                </div>
+            </article>
+
+            <article class="report">
+                <div class="report-image">
+                    <img src="https://via.placeholder.com/600x400/1e2327/ffcc00?text=Object+Photo+6" alt="Фото объекта">
+                </div>
+                <div class="report-content">
+                    <div class="report-header">
+                        <span class="status-badge">Yoo!!</span>
+                        <h3>Объект: Система</h3>
+                    </div>
+                    <p><strong>Адрес:</strong> Проспект Вернадского, 86</p>
+                    <p>Плановая самодиагностика ATSMS завершена. Все модули работают в штатном режиме.</p>
+                </div>
             </article>
         </div>
     </section>
 
     <section id="authors" class="container">
-        <h2>Авторы [cite: 17, 18]</h2>
+        <h2>Авторы</h2>
         <div class="team-grid">
             <article class="member-card">
                 <div class="member-photo">
-                    <img src="https://via.placeholder.com/150/ffcc00/000000?text=M.S." alt="Селимов Максим">
+                    <img src="https://via.placeholder.com/400x400/161a1d/ffcc00?text=M.S." alt="Селимов Максим">
                 </div>
-                <h3>Селимов Максим [cite: 13]</h3>
-                <p class="role">Научный руководитель [cite: 12]</p>
+                <h3>Селимов Максим</h3>
+                <p class="role">Научный руководитель</p>
+                <p class="member-bio">Эксперт в области интеллектуальных систем и военных разработок.</p>
             </article>
 
             <article class="member-card">
                 <div class="member-photo">
-                    <img src="https://via.placeholder.com/150/ffcc00/000000?text=A.A." alt="Архипова Алиса">
+                    <img src="https://via.placeholder.com/400x400/161a1d/ffcc00?text=A.A." alt="Архипова Алиса">
                 </div>
-                <h3>Архипова Алиса [cite: 15]</h3>
+                <h3>Архипова Алиса</h3>
                 <p class="role">Ведущий разработчик</p>
+                <p class="member-bio">Специалист по разработке программного обеспечения и интеграции датчиков.</p>
             </article>
         </div>
     </section>
 </main>
 
 <footer id="contacts">
-    <div class="container">
-        <h2>Контакты [cite: 7, 19]</h2>
-        <address>
-            <p>Email: <a href="mailto:altair@mirea.ru">altair@mirea.ru</a> [cite: 20]</p>
-            <p>Телефон: <a href="tel:+79120769656">+7 (912) 076-96-56</a> [cite: 20]</p>
-            <p>Адрес: просп. Вернадского, 86, стр. 2 [cite: 21]</p>
-        </address>
+    <div class="container footer-grid">
+        <div class="footer-title">
+            <h2>Контакты</h2>
+        </div>
+
+        <div class="footer-info">
+            <div class="contact-details">
+                <p><a href="mailto:altair@mirea.ru">altair@mirea.ru</a></p>
+                <p><a href="tel:+79120769656">+7 (912) 076-96-56</a></p>
+                <p class="address">просп. Вернадского, 86, стр. 2</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://telegram.me/priem_mirea#" class="social-link" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
+                </a>
+
+                <a href="https://vk.com/priem_mirea" class="social-link" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/vk-com.png" alt="VK">
+                </a>
+            </div>
+        </div>
     </div>
 </footer>
-
+<script src="src/script.js"></script>
 </body>
 </html>

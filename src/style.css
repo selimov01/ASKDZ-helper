@@ -1,41 +1,151 @@
-/* --- ПЕРЕМЕННЫЕ --- */
 :root {
     --bg-dark: #0d0f11;
     --card-bg: #161a1d;
-    --accent: #ffcc00; /* Желтый дорожный */
-    --danger: #ff3e3e; /* Красный STOP */
+    --accent: #ffcc00;
+    --danger: #ff3e3e;
     --text-high: #f0f2f5;
     --text-low: #9da5b1;
     --border: #2d343b;
-    --transition: all 0.3s ease;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --font-main: 'Inter', sans-serif;
+    --font-accent: 'Orbitron', sans-serif;
 }
 
-/* --- ГЛОБАЛЬНЫЕ СТИЛИ --- */
-html {
-    scroll-behavior: smooth; /* Плавная прокрутка */
+html { scroll-behavior: smooth; }
+
+main {
+    padding-top: 120px; /* Высота шапки (100px) + запас (20px) */
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-high);
-    font-family: 'Inter', system-ui, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-main), serif;
+    line-height: 1.7; /* Увеличили для читаемости */
     margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+.container { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+
+/* --- СТИЛИЗАЦИЯ ТЕКСТА --- */
+
+h1, h2, h3, .logo, .stat-num {
+    font-family: var(--font-accent), serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* --- НАВИГАЦИЯ --- */
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    background: linear-gradient(180deg, #fff 0%, var(--text-low) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.1));
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+/* Линия под заголовком секции */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 15px auto 0;
+}
+
+/* ЧИСТЫЙ ЗАГОЛОВОК СЕКЦИИ */
+.section-title h1 {
+    font-family: var(--font-accent), serif; /* Используем Orbitron */
+    font-size: 4.5rem;             /* Крупный, заметный размер */
+    font-weight: 900;              /* Максимальная жирность */
+    text-transform: uppercase;     /* Капс */
+    letter-spacing: 5px;           /* Широкая расстановка букв */
+    margin: 0;
+    line-height: 1.1;
+
+    /* ЭФФЕКТ: Чистый металлический градиент (Снизу вверх) */
+    background: linear-gradient(0deg,
+    #a1a8b5 0%,    /* Светло-серый низ */
+    #ffffff 50%,   /* Белый центр (блик) */
+    #f2f5f9 100%   /* Чуть более холодный верх */
+    );
+    -webkit-background-clip: text; /* Обрезаем фон по контуру букв */
+    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
+
+    /* УБРАЛИ: text-shadow и filter, чтобы убрать свечение */
+}
+
+/* Композиция заголовка */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Плотная связь с подзаголовком */
+}
+/* Тот самый подзаголовок, где было пусто */
+.subtitle {
+    font-family: var(--font-main), serif;
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px; /* Совсем небольшое расстояние для эстетики */
+    margin: 0;            /* Убираем лишние отступы */
+    opacity: 0.9;
+    max-width: 800px;     /* Ограничиваем ширину, чтобы текст не растягивался в одну тонкую нить */
+}
+
+/* Акцентный абзац с желтой линией */
+.highlight {
+    font-size: 1.6rem;    /* Чуть увеличили, чтобы заполнить пространство */
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 20px;     /* Добавили отступ сверху, чтобы он не прилипал к заголовку */
+    margin-bottom: 25px;
+    padding-left: 25px;
+    border-left: 5px solid var(--accent);
+}
+
+/* Обычный текст */
+p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--text-low);
+    text-align: justify; /* Ровные края */
+}
+
+strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Цифры статистики */
+.stat-num {
+    font-size: 3rem;
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* --- ОСТАЛЬНЫЕ СТИЛИ --- */
+
+/* --- ОБНОВЛЕННАЯ ШАПКА --- */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(13, 15, 17, 0.9);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px); /* Усилили размытие для премиального вида */
     border-bottom: 1px solid var(--border);
     z-index: 1000;
 }
@@ -44,163 +154,276 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100px; /* Немного увеличили высоту для солидности */
 }
 
+/* ЛОГОТИП */
 .logo {
-    font-weight: 900;
+    font-family: var(--font-accent), serif;
+    font-size: 1.8rem; /* Увеличили лого */
     color: var(--accent);
-    letter-spacing: 2px;
-    border: 2px solid var(--accent);
-    padding: 5px 15px;
+    border: 3px solid var(--accent);
+    padding: 8px 25px;
+    letter-spacing: 3px;
+    font-weight: 900;
 }
 
-nav ul {
+/* КНОПКИ НАВИГАЦИИ */
+.nav-list {
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: 40px; /* Увеличили расстояние между кнопками */
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-high);
+    font-family: var(--font-accent), serif;
     font-weight: 700;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: var(--transition);
+    letter-spacing: 2px;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease, opacity 0.3s ease; /* Плавная смена цвета */
+    opacity: 0.6;
 }
 
-.nav-link:hover {
-    background: rgba(255, 204, 0, 0.1);
+/* Состояние при наведении и активный класс от JS */
+.nav-link:hover,
+.nav-link.active {
     color: var(--accent);
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
 }
 
-/* --- СЕКЦИИ --- */
-section {
-    padding: 120px 0 60px;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Немного опустили линию */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Плавный выезд линии */
 }
 
-h1, h2 {
+/* Когда JS добавляет класс .active, линия выезжает на 100% */
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+/* Добавим легкое свечение при наведении */
+.nav-link:hover {
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+/* Сетка "О проекте" */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.stat-desc {
+    font-size: 0.75rem;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-/* --- КАРТОЧКИ МОНИТОРИНГА --- */
+/* Мониторинг и Команда */
 .problem-reports {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
-
 .report {
     background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden; border: 1px solid var(--border);
+    transition: var(--transition);
+}
+.report:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+.report-content {
     padding: 30px;
-    border-top: 3px solid var(--accent);
-    border-radius: 4px;
 }
-
-.report-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+.report h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
 }
-
-.status-badge {
-    background: var(--border);
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    font-weight: bold;
-    border-radius: 2px;
-}
-
-.status-stop {
-    background: var(--danger);
-    color: white;
-}
-
-/* --- КОМАНДА --- */
 .team-grid {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
 }
-
 .member-card {
     background: var(--card-bg);
-    padding: 40px 20px;
-    flex: 0 1 320px;
+    padding: 50px 30px;
+    flex: 0 1 400px;
     text-align: center;
+    border-radius: 20px;
     border: 1px solid var(--border);
     transition: var(--transition);
 }
-
-.member-card:hover {
-    border-color: var(--accent);
-}
-
 .member-photo {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto 20px;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
     border-radius: 50%;
-    overflow: hidden;
     border: 3px solid var(--accent);
+    overflow: hidden;
 }
-
 .member-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .role {
     color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: 800;
     margin-top: 10px;
 }
 
-/* --- ФУТЕР --- */
+/* --- ОБНОВЛЕННЫЙ ФУТЕР --- */
 footer {
-    padding: 80px 0;
+    padding: 100px 0 60px;
     background: #090b0d;
-    text-align: center;
     border-top: 1px solid var(--border);
 }
 
-address {
-    font-style: normal;
-    color: var(--text-low);
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-address a {
-    color: var(--accent);
+/* Левая часть: Контакты */
+.footer-title h2 {
+    font-size: 5rem; /* Очень крупный шрифт как на картинке */
+    margin: 0;
+    text-align: left;
+    color: #fff;
+    font-family: var(--font-main); /* Используем основной шрифт для сходства с фото */
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: none; /* Убираем капс для этого заголовка */
+}
+
+.footer-title h2::after {
+    display: none; /* Убираем желтую линию для футера */
+}
+
+/* Правая часть */
+.footer-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-details p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: right;
+    font-family: var(--font-main);
+    color: #fff;
+}
+
+.contact-details a {
+    color: #fff;
     text-decoration: none;
+    transition: var(--transition);
 }
 
-/* --- АДАПТИВНОСТЬ --- */
+.contact-details a:hover {
+    color: var(--accent);
+}
+
+.address {
+    margin-top: 20px !important;
+    color: #fff !important;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #000; /* Черный квадрат как на фото */
+    border-radius: 4px;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.social-link img {
+    width: 35px;      /* Размер иконки внутри квадрата */
+    height: 35px;
+    object-fit: contain; /* Чтобы картинка не растягивалась */
+    filter: brightness(1); /* Гарантируем яркость */
+    transition: var(--transition);
+}
+
+/* Эффект при наведении */
+.social-link:hover {
+    background: var(--accent); /* Квадрат становится желтым */
+    transform: translateY(-3px);
+}
+
+/* Если у тебя иконка белая на прозрачном фоне,
+   при наведении мы можем сделать её черной через фильтры */
+.social-link:hover img {
+    filter: brightness(0); /* Делает белую иконку черной при наведении на желтый фон */
+}
+
+/* Адаптивность для футера */
+@media (max-width: 992px) {
+    .footer-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-title h2 {
+        font-size: 3.5rem;
+    }
+    .footer-info {
+        text-align: left;
+    }
+    .contact-details p, .social-icons {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+/* адаптив для планшетов */
+@media (max-width: 1200px) {
+    .problem-reports {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+}
+
+/* адаптив для мобильных */
 @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .header-flex { flex-direction: column; height: auto; padding: 20px 0; }
-    nav ul { margin-top: 15px; }
-    h1 { font-size: 1.8rem; }
+    .problem-reports {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
 }
