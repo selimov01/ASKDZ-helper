@@ -7,203 +7,203 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
 </head>
-<body>
+    <body>
 
-<header>
-    <div class="container header-flex">
-        <div class="logo">ATSMS</div>
-        <nav aria-label="Главное меню">
-            <ul class="nav-list">
-                <li><a href="#about" class="nav-link active">О проекте</a></li>
-                <li><a href="#monitoring" class="nav-link">Мониторинг</a></li>
-                <li><a href="#authors" class="nav-link">Команда</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section id="about" class="container">
-        <div class="section-title">
-            <h1>О проекте</h1>
-            <p class="subtitle">Интеллектуальная экосистема безопасности дорожного движения</p>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">ATSMS</div>
+            <nav aria-label="Главное меню">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link active">О проекте</a></li>
+                    <li><a href="#monitoring" class="nav-link">Мониторинг</a></li>
+                    <li><a href="#authors" class="nav-link">Команда</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="about-grid">
-            <div class="about-text">
-                <p class="highlight">Дорожные знаки — это «язык» дороги. Ошибки в их содержании стоят человеческих жизней.</p>
-
-                <p>Проект <strong>ATSMS</strong> направлен на решение критической проблемы:
-                    несвоевременного обнаружения повреждений и нарушений регламентов установки технических средств организации движения.
-                    В условиях мегаполиса ручной мониторинг тысяч объектов неэффективен и подвержен человеческому фактору.</p>
-
-                <p>Наше решение — это симбиоз высокоточных аппаратных датчиков и алгоритмов компьютерного зрения.
-                    Система в реальном времени анализирует состояние знаков на соответствие
-                    <strong>ГОСТ Р 52289-2019</strong>, мгновенно выявляя акты вандализма,
-                    износ световозвращающего покрытия или отклонения в геометрии установки.</p>
-
-                <p>Мы не просто фиксируем проблемы — мы создаем предиктивную модель обслуживания дорожной сети,
-                    снижая риски ДТП и оптимизируя работу городских служб.</p>
-
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">85%</span>
-                        <span class="stat-desc">Точность анализа</span>
-                    </div>
-
-                    <div class="stat-item">
-                        <span class="stat-num">AI</span>
-                        <span class="stat-desc">Computer Vision</span>
-                    </div>
-                </div>
+    <main>
+        <section id="about" class="container">
+            <div class="section-title">
+                <h1>О проекте</h1>
+                <p class="subtitle">Интеллектуальная экосистема безопасности дорожного движения</p>
             </div>
 
-            <div class="about-image">
-                <img src="assets/Device.jpg" alt="Технологическое зрение системы">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="highlight">Дорожные знаки — это «язык» дороги. Ошибки в их содержании стоят человеческих жизней.</p>
+
+                    <p>Проект <strong>ATSMS</strong> направлен на решение критической проблемы:
+                        несвоевременного обнаружения повреждений и нарушений регламентов установки технических средств организации движения.
+                        В условиях мегаполиса ручной мониторинг тысяч объектов неэффективен и подвержен человеческому фактору.</p>
+
+                    <p>Наше решение — это симбиоз высокоточных аппаратных датчиков и алгоритмов компьютерного зрения.
+                        Система в реальном времени анализирует состояние знаков на соответствие
+                        <strong>ГОСТ Р 52289-2019</strong>, мгновенно выявляя акты вандализма,
+                        износ световозвращающего покрытия или отклонения в геометрии установки.</p>
+
+                    <p>Мы не просто фиксируем проблемы — мы создаем предиктивную модель обслуживания дорожной сети,
+                        снижая риски ДТП и оптимизируя работу городских служб.</p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">85%</span>
+                            <span class="stat-desc">Точность анализа</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-num">AI</span>
+                            <span class="stat-desc">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="assets/Device.jpg" alt="Технологическое зрение системы">
+                </div>
+            </div>
+        </section>
+
+        <section id="monitoring" class="container">
+            <h2>Текущее состояние дорожных знаков</h2>
+            <div class="problem-reports">
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo1.jpg" alt="Stop-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge">STOP</span>
+                            <h3><span class="highlight-word">Объект:</span> Выезд запрещен</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> ул. Авиаторов, д.18, корп.1, 119620</p>
+                        <p>Зафиксировано повреждение лицевой части</p>
+                    </div>
+                </article>
+
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo2.jpg" alt="Kids-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge status-stop">Warning kids</span>
+                            <h3><span class="highlight-word">Объект:</span> Осторожно дети</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> ул. Шорса, д.8, корп.1</p>
+                        <p>Зафиксировано присутствие посторонних объектов на знаке</p>
+                    </div>
+                </article>
+
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo3.jpg" alt="Non-parking-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge">Not parking</span>
+                            <h3><span class="highlight-word">Объект:</span> Остановка запрещена</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> ул. Авиаторов, д.18, корп.1, 119620</p>
+                        <p>Зафиксировано присутствие посторонних объектов на знаке</p>
+                    </div>
+                </article>
+
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo4.jpg" alt="dump-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge status-stop">Speed dump</span>
+                            <h3><span class="highlight-word">Объект:</span> Лежачий полицейский</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> ул. Шорса, д.6, корп. 1</p>
+                        <p>Зафиксировано загрязнение знака</p>
+                    </div>
+                </article>
+
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo5.jpg" alt="dump-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge">Speed dump</span>
+                            <h3><span class="highlight-word">Объект:</span> Лежачий полицейский</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> ул. Авиаторов, д.3, корп. А</p>
+                        <p>Зафиксировано загрязнение знака</p>
+                    </div>
+                </article>
+
+                <article class="report">
+                    <div class="report-image">
+                        <img src="assets/signs/photo6.jpg" alt="Zebra-sign">
+                    </div>
+                    <div class="report-content">
+                        <div class="report-header">
+                            <span class="status-badge">Pedestrian bridge</span>
+                            <h3><span class="highlight-word">Объект:</span> Пешеходный переход</h3>
+                        </div>
+                        <p><strong>Адрес:</strong> Солнцевский просп., д.8</p>
+                        <p>Зафиксировано загрязнение знака</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="authors" class="container">
+            <h2>Команда проекта</h2>
+            <div class="team-grid">
+                <article class="member-card">
+                    <div class="member-photo">
+                        <img src="assets/Selimov.jpg" alt="Селимов Максим">
+                    </div>
+                    <h3>Селимов Максим</h3>
+                    <p class="role">Научный руководитель</p>
+                    <p class="member-bio">Эксперт в области интеллектуальных систем и военных разработок</p>
+                    <p>Presale-инженер Orion Soft</p>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-photo">
+                        <img src="assets/Arhipova.jpg" alt="Архипова Алиса">
+                    </div>
+                    <h3>Архипова Алиса</h3>
+                    <p class="role">Ведущий разработчик</p>
+                    <p class="member-bio">Специалист по разработке программного обеспечения и интеграции датчиков</p>
+                    <p>Ученица ГБОУ Школы № 1002</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="container footer-grid">
+            <div class="footer-title">
+                <h2>Контакты</h2>
+            </div>
+
+            <div class="footer-info">
+                <div class="contact-details">
+                    <p><a href="mailto:altair@mirea.ru">altair@mirea.ru</a></p>
+                    <p><a href="tel:+79120769656">+7 (912) 076-96-56</a></p>
+                    <p class="address">просп. Вернадского, 86, стр. 2</p>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://telegram.me/priem_mirea#" class="social-link" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
+                    </a>
+
+                    <a href="https://vk.com/priem_mirea" class="social-link" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/vk-com.png" alt="VK">
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="monitoring" class="container">
-        <h2>Текущее состояние дорожных знаков</h2>
-        <div class="problem-reports">
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo1.jpg" alt="Stop-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge">STOP</span>
-                        <h3><span class="highlight-word">Объект:</span> Выезд запрещен</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> ул. Авиаторов, д.18, корп.1, 119620</p>
-                    <p>Зафиксировано повреждение лицевой части</p>
-                </div>
-            </article>
-
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo2.jpg" alt="Kids-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge status-stop">Warning kids</span>
-                        <h3><span class="highlight-word">Объект:</span> Осторожно дети</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> ул. Шорса, д.8, корп.1</p>
-                    <p>Зафиксировано присутствие посторонних объектов на знаке</p>
-                </div>
-            </article>
-
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo3.jpg" alt="Non-parking-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge">Not parking</span>
-                        <h3><span class="highlight-word">Объект:</span> Остановка запрещена</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> ул. Авиаторов, д.18, корп.1, 119620</p>
-                    <p>Зафиксировано присутствие посторонних объектов на знаке</p>
-                </div>
-            </article>
-
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo4.jpg" alt="dump-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge status-stop">Speed dump</span>
-                        <h3><span class="highlight-word">Объект:</span> Лежачий полицейский</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> ул. Шорса, д.6, корп. 1</p>
-                    <p>Зафиксировано загрязнение знака</p>
-                </div>
-            </article>
-
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo5.jpg" alt="dump-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge">Speed dump</span>
-                        <h3><span class="highlight-word">Объект:</span> Лежачий полицейский</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> ул. Авиаторов, д.3, корп. А</p>
-                    <p>Зафиксировано загрязнение знака</p>
-                </div>
-            </article>
-
-            <article class="report">
-                <div class="report-image">
-                    <img src="assets/signs/photo6.jpg" alt="Zebra-sign">
-                </div>
-                <div class="report-content">
-                    <div class="report-header">
-                        <span class="status-badge">Pedestrian bridge</span>
-                        <h3><span class="highlight-word">Объект:</span> Пешеходный переход</h3>
-                    </div>
-                    <p><strong>Адрес:</strong> Солнцевский просп., д.8</p>
-                    <p>Зафиксировано загрязнение знака</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="authors" class="container">
-        <h2>Команда проекта</h2>
-        <div class="team-grid">
-            <article class="member-card">
-                <div class="member-photo">
-                    <img src="assets/Selimov.jpg" alt="Селимов Максим">
-                </div>
-                <h3>Селимов Максим</h3>
-                <p class="role">Научный руководитель</p>
-                <p class="member-bio">Эксперт в области интеллектуальных систем и военных разработок</p>
-                <p>Presale-инженер Orion Soft</p>
-            </article>
-
-            <article class="member-card">
-                <div class="member-photo">
-                    <img src="assets/Arhipova.jpg" alt="Архипова Алиса">
-                </div>
-                <h3>Архипова Алиса</h3>
-                <p class="role">Ведущий разработчик</p>
-                <p class="member-bio">Специалист по разработке программного обеспечения и интеграции датчиков</p>
-                <p>Ученица ГБОУ Школы № 1002</p>
-            </article>
-        </div>
-    </section>
-</main>
-
-<footer id="contacts">
-    <div class="container footer-grid">
-        <div class="footer-title">
-            <h2>Контакты</h2>
-        </div>
-
-        <div class="footer-info">
-            <div class="contact-details">
-                <p><a href="mailto:altair@mirea.ru">altair@mirea.ru</a></p>
-                <p><a href="tel:+79120769656">+7 (912) 076-96-56</a></p>
-                <p class="address">просп. Вернадского, 86, стр. 2</p>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://telegram.me/priem_mirea#" class="social-link" target="_blank">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
-                </a>
-
-                <a href="https://vk.com/priem_mirea" class="social-link" target="_blank">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/vk-com.png" alt="VK">
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="src/script.js"></script>
-</body>
+    </footer>
+    <script src="src/script.js"></script>
+    </body>
 </html>
